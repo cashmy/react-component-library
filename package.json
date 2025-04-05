@@ -11,7 +11,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "jest --watchAll --verbose",
+    "test": "jest",
+    "test-watch": "jest --watchAll --verbose",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky"
@@ -60,7 +61,6 @@
     "@testing-library/react": "^16.3.0",
     "@types/jest": "^29.5.14",
     "@types/react": "^19.1.0",
-    "husky": "^9.1.7",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "react": "^19.1.0",
