@@ -3,15 +3,15 @@ import typescript from "@rollup/plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
-import packageJson from "./package.json" with { type: "json" };
+// import packageJson from "./package.json" with { type: "json" };
 
 export default [
   {
     input: "src/index.ts",
     output: [
       {
-        file: 'dist/index.js',
-        format: 'es',
+        file: "dist/index.js",
+        format: "es",
         sourcemap: true,
       },
       // {
@@ -27,7 +27,7 @@ export default [
     ],
     plugins: [
       resolve({
-        extensions: ['.js', '.jsx', '.ts', '.tsx'], // Add necessary extensions
+        extensions: [".js", ".jsx", ".ts", ".tsx"], // Add necessary extensions
         skip: ["react", "react-dom"],
       }),
       commonjs(),
@@ -35,14 +35,14 @@ export default [
         tsconfig: "./tsconfig.json",
         exclude: ["**/*.test.tsx", "**/*.test.ts", "**/*.stories.ts"],
       }),
-       postcss({ extensions: [".css"], inject: true, extract: false }),
+      postcss({ extensions: [".css"], inject: true, extract: false }),
     ],
-     external: ["react", "react-dom", "react/jsx-runtime"],
+    external: ["react", "react-dom", "react/jsx-runtime"],
   },
   {
     input: "dist/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
     external: [/\.css$/],
-  }
+  },
 ];

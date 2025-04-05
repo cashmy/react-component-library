@@ -17,7 +17,13 @@
     "build-storybook": "storybook build",
     "prepare": "husky",
     "lint": "eslint ./src --ext .ts,.tsx",
-    "lint:fix": "eslint ./src --ext .ts,.tsx --fix"
+    "lint:fix": "eslint ./src --ext .ts,.tsx --fix",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major",
+    "release:prerelease": "standard-version --prerelease prerelease",
+    "release:dry": "standard-version --dry-run"
   },
   "jest": {
     "testEnvironment": "jsdom"
@@ -49,6 +55,8 @@
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
     "@babel/preset-typescript": "^7.27.0",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@eslint/js": "^9.24.0",
     "@rollup/plugin-commonjs": "^28.0.3",
     "@rollup/plugin-node-resolve": "^16.0.1",
@@ -73,6 +81,7 @@
     "react-dom": "^19.1.0",
     "rollup-plugin-dts": "^6.2.1",
     "rollup-plugin-postcss": "^4.0.2",
+    "standard-version": "^9.5.0",
     "storybook": "^8.6.12",
     "styled-components": "^6.1.17",
     "tslib": "^2.8.1",
