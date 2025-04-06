@@ -25,8 +25,6 @@ export default defineConfig([
       },
     },
     rules: {
-      // "@typescript-eslint/quotes": ["error", "double"],
-      // "@typescript-eslint/semi": ["error", "always"],
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
     },
